@@ -4,12 +4,21 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
+import java.util.Locale;
+
 public class ScrollingActivity extends AppCompatActivity {
+    public static List<Data> datas = new ArrayList<>();
+    private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +35,21 @@ public class ScrollingActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+        Calendar c = Calendar.getInstance();
+        String finalTime = String.format(Locale.GERMANY, "%d:%d", c.get(Calendar.HOUR), c.get(Calendar.MINUTE));
+        setTitle(finalTime);
+
+        // setup RV
+        recyclerView = (RecyclerView)findViewById(R.id.recyclerView);
+        LinearLayoutManager llm = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(llm);
+        recyclerView.setHasFixedSize(true);
+
+        // setup adapter
+        final RVAdapter adapter = new RVAdapter(datas, this);
+        recyclerView.setAdapter(adapter);
+        datas.add(new Data("Clean windows", "Home", 1));
+
     }
 
     @Override
