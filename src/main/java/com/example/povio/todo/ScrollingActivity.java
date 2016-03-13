@@ -37,8 +37,37 @@ public class ScrollingActivity extends AppCompatActivity {
         });
         //setup time
         Calendar c = Calendar.getInstance();
-        String finalTime = String.format(Locale.GERMANY, "%d:%d", c.get(Calendar.HOUR), c.get(Calendar.MINUTE));
+        String finalTime = String.format(Locale.GERMANY, "%02d:%02d", c.get(Calendar.HOUR_OF_DAY), c.get(Calendar.MINUTE));
         setTitle(finalTime);
+
+
+
+        Thread t = new Thread() {
+
+            @Override
+            public void run() {
+                try {
+                    while (!isInterrupted()) {
+                        Thread.sleep(1000);
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+
+                            }
+                        });
+                    }
+                } catch (InterruptedException e) {
+                }
+            }
+        };
+
+        t.start();
+
+
+
+
+
+
 
         // setup RV
         recyclerView = (RecyclerView)findViewById(R.id.recyclerView);
