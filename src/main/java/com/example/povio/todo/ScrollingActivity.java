@@ -35,6 +35,7 @@ public class ScrollingActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+        //setup time
         Calendar c = Calendar.getInstance();
         String finalTime = String.format(Locale.GERMANY, "%d:%d", c.get(Calendar.HOUR), c.get(Calendar.MINUTE));
         setTitle(finalTime);
