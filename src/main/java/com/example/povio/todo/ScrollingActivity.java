@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.Locale;
 
 public class ScrollingActivity extends AppCompatActivity {
-    public static List<Data> datas = new ArrayList<>();
+    public static List<Data> data = new ArrayList<>();
     private RecyclerView recyclerView;
 
     @Override
@@ -76,9 +76,9 @@ public class ScrollingActivity extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
 
         // setup adapter
-        final RVAdapter adapter = new RVAdapter(datas, this);
+        final RVAdapter adapter = new RVAdapter(data, this);
         recyclerView.setAdapter(adapter);
-        datas.add(new Data("Clean windows", "Home", 1));
+        data.add(new Data("Clean windows", "Home", 1));
 
     }
 
