@@ -32,11 +32,9 @@ public class ScrollingActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-                Intent intent = new Intent(getBaseContext(), ScrollingActivity.class);
+                Intent intent = new Intent(getBaseContext(), AddNewItem.class);
                 startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
+                overridePendingTransition(R.anim.slide_in_left, R.anim.nothing);
             }
         });
         //setup time
@@ -44,6 +42,8 @@ public class ScrollingActivity extends AppCompatActivity {
         String finalTime = String.format(Locale.GERMANY, "%02d:%02d", c.get(Calendar.HOUR_OF_DAY), c.get(Calendar.MINUTE));
         //setTitle(finalTime);
         setTitle("To DO list");
+
+
         // setup RV
         recyclerView = (RecyclerView)findViewById(R.id.recyclerView);
         LinearLayoutManager llm = new LinearLayoutManager(this);
