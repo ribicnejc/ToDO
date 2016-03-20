@@ -54,6 +54,20 @@
                 android:layout_toRightOf="@+id/typePhoto"
                 />
 
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:text="ABOUT"
+                android:textStyle=""
+                android:textSize="15dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:id="@+id/button"
+                android:background="#ffffff"
+                android:layout_alignBottom="@+id/type"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
         </RelativeLayout>
     </android.support.v7.widget.CardView>
 

@@ -25,6 +25,7 @@ public class Splash extends AppCompatActivity {
                         finish();
                         Intent intent = new Intent(getBaseContext(), ScrollingActivity.class);
                         startActivity(intent);
+                        //overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
                     }
                 }
             }
