@@ -20,14 +20,14 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.InfoViewHolder> {
         CardView cv;
         TextView thingTodo;
         TextView type;
-        ImageView weatherPhoto;
+        ImageView typePhoto;
 
         InfoViewHolder(View itemView) {
             super(itemView);
             itemView.setOnClickListener(this);
             thingTodo = (TextView)itemView.findViewById(R.id.todo);
             type = (TextView)itemView.findViewById(R.id.type);
-            //weatherPhoto = (ImageView)itemView.findViewById(R.id.person_photo);
+            typePhoto = (ImageView)itemView.findViewById(R.id.typePhoto);
         }
 
         @Override
@@ -59,7 +59,7 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.InfoViewHolder> {
     public void onBindViewHolder(InfoViewHolder weatherViewHolder, final int i) {
         weatherViewHolder.thingTodo.setText(data.get(i).name);
         weatherViewHolder.type.setText(data.get(i).type);
-        //weatherViewHolder.weatherPhoto.setImageResource(datas.get(i).photoID);
+        weatherViewHolder.typePhoto.setImageResource(data.get(i).photoID);
         weatherViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

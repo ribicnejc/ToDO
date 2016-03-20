@@ -40,35 +40,6 @@ public class ScrollingActivity extends AppCompatActivity {
         String finalTime = String.format(Locale.GERMANY, "%02d:%02d", c.get(Calendar.HOUR_OF_DAY), c.get(Calendar.MINUTE));
         setTitle(finalTime);
 
-
-
-        Thread t = new Thread() {
-
-            @Override
-            public void run() {
-                try {
-                    while (!isInterrupted()) {
-                        Thread.sleep(1000);
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-
-                            }
-                        });
-                    }
-                } catch (InterruptedException e) {
-                }
-            }
-        };
-
-        t.start();
-
-
-
-
-
-
-
         // setup RV
         recyclerView = (RecyclerView)findViewById(R.id.recyclerView);
         LinearLayoutManager llm = new LinearLayoutManager(this);
@@ -78,7 +49,7 @@ public class ScrollingActivity extends AppCompatActivity {
         // setup adapter
         final RVAdapter adapter = new RVAdapter(data, this);
         recyclerView.setAdapter(adapter);
-        data.add(new Data("Clean windows", "Home", 1));
+        data.add(new Data("Clean windows", "Home", R.drawable.home));
 
     }
 
