@@ -5,10 +5,10 @@
     android:background="#0785AB">
 
     <ImageView
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:id="@+id/imageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/splashPic"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/icon"/>
+        android:background="@drawable/checklist"/>
 </RelativeLayout>
