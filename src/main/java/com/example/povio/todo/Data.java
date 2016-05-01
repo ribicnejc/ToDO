@@ -11,6 +11,8 @@ public class Data {
         this.photoID = photoID;
     }
 
+
+
     public String getName(){
         return this.name;
     }
